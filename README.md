@@ -17,8 +17,11 @@ npm install
 #### Configure serverless.yml
 In the serverless.yml file there are some settings need updating.  You may not need as many security groups or subnet. Update the following under provider:
 ```
-  region: us-west-2
-  stage: api
+provider:
+  name: aws
+  runtime: nodejs10.x 
+  region: <your region>
+  stage: <dev/test/prod/api/you pick>
   role: <your role here>
   vpc:
     securityGroupIds:
