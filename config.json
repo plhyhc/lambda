@@ -1,0 +1,6 @@
+{
+    "dbhost" : "<url to database server here>",
+    "dbname" : "<database name here>",
+    "dbuser" : "<username here>",
+    "dbpassword" : "<password here>"
+}

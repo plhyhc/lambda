@@ -1,0 +1,34 @@
+
+service: weather
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-west-2
+  stage: api
+  role: arn:aws:iam::495393822769:role/lambda-vpc-role
+  vpc:
+    securityGroupIds:
+      - sg-9cdbb1f8
+      - sg-023815739d8dc6c1e
+    subnetIds:
+      - subnet-3db4f04a
+      - subnet-0e66476b
+      - subnet-d7ed738e
+    
+
+
+functions:
+  log_weather:
+    handler: weather.log_weather
+    events:
+      - http:
+          path: log_weather
+          method: post
+
+  get_allweather:
+    handler: weather.get_allweather
+    events:
+      - http:
+          path: get_allweather
+          method: get
