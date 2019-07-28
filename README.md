@@ -15,7 +15,7 @@ npm install
 ```
 
 #### Configure serverless.yml
-In the serverless.yml file there are some settings need updating.  You may not need as many security groups or subnet. Update the following under provider:
+In the serverless.yml file there are some settings that need updating.  You may not need as many security groups or subnet. Update the following under provider:
 ```
 provider:
   name: aws
@@ -34,10 +34,10 @@ provider:
 ```
 
 #### AWS Configuration
-This application connects to an RDS MySQL server.  You will need to update the security group and IAM to allow Lambda functions to access it.  The security group will need port access and the Lambda group will need access to the VPC the RDS is a part of.
+This application connects to an RDS MySQL server.  You will need to update the security group and IAM to allow Lambda functions to access it.  The security group will need port access and the Lambda will need access to the VPC the RDS is a part of.
 
 #### Database Setup
-For MySQL create the following table.
+For MySQL, create the following table.
 ```
 CREATE TABLE `station_logs` (
   `id` int(11) NOT NULL,
